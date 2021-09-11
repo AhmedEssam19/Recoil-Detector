@@ -80,7 +80,7 @@ def run_training(fold, config, mode='clf'):
             epoch_loss = running_loss / dataset_sizes[phase]
 
             if mode == 'clf':
-                epoch_acc = accuracy_score(pred, target)
+                epoch_acc = accuracy_score(targets_accum, preds_accum)
                 print('ACC: {}'.format(np.round(epoch_acc, 3)))
 
             print('{} Loss: {}'.format(
